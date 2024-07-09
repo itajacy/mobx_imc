@@ -19,6 +19,16 @@ abstract class _ContadorCodegenControllerBase with Store {
   @action
   void increment() {
     counter++;
+  }
+
+  @action
+  void changeName() {
+
     fullName = fullName.copyWith(first: 'Rodrigo', last: 'Rahman');
+  }
+  
+  @action
+  void rollbackName() {
+    fullName = fullName.copyWith(first: 'first', last: 'last');
   }
 }
