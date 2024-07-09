@@ -7,12 +7,18 @@ class ContadorController {
   var _fullName = Observable<FullName>(FullName(first: 'first', last: 'last'));
 
   late Action increment;
+  late Computed _saudacaoComputed;
+
   ContadorController() {
     increment = Action(_incrementCounter);
+    _saudacaoComputed =
+        Computed(() => 'Ola ${_fullName.value.first}  ${_counter.value}');
   }
 
   int get counter => _counter.value;
   FullName get fullName => _fullName.value;
+
+  String get saudacao => _saudacaoComputed.value;
 
   void _incrementCounter() {
     _counter.value++;
