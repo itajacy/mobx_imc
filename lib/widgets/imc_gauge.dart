@@ -37,13 +37,13 @@ class ImcGauge extends StatelessWidget {
               label: 'SOBREPESO',
             ),
             ImcGaugeRange(
-              color: Colors.red,
+              color: Color.fromARGB(255, 229, 41, 27),
               start: 29.9,
               end: 39.9,
               label: 'OBESIDADE',
             ),
             ImcGaugeRange(
-              color: Colors.red,
+              color: const Color.fromARGB(255, 153, 14, 4),
               start: 39.9,
               end: 47.9,
               label: 'OBESIDADE GRAVE',
