@@ -35,7 +35,9 @@ dependencies:
   mobx: ^2.3.3+2
   # flutter_mobx: ^2.0.1
   flutter_mobx: ^2.2.1+1
-  
+  syncfusion_flutter_gauges: ^26.1.41
+  currency_text_input_formatter: ^2.2.3
+  intl: ^0.19.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -49,6 +51,10 @@ dev_dependencies:
   mobx_codegen: ^2.6.1
   # build_runner: ^2.1.0
   build_runner: ^2.4.11
+ 
+  
+  
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
