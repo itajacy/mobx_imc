@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 import 'package:mobx_imc/model/full_name.dart';
 
-part 'contador_codegen_controller.g.dart';
+part 'contador_codegen_controller.g.dartx';
 
 class ContadorCodegenController = _ContadorCodegenControllerBase
     with _$ContadorCodegenController;
@@ -23,10 +23,9 @@ abstract class _ContadorCodegenControllerBase with Store {
 
   @action
   void changeName() {
-
     fullName = fullName.copyWith(first: 'Rodrigo', last: 'Rahman');
   }
-  
+
   @action
   void rollbackName() {
     fullName = fullName.copyWith(first: 'first', last: 'last');
