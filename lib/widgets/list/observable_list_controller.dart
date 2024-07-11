@@ -34,4 +34,14 @@ abstract class ObservableListControllerBase with Store {
     // products = productsData;
     products.addAll(productsData);
   }
+
+  @action
+  void addProduct() {
+    products.add(ProductModel(name: 'Computador'));
+  }
+
+  @action
+  void removerProduct() {
+    products.removeAt(0);
+  }
 }

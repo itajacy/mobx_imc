@@ -40,6 +40,28 @@ mixin _$ObservableListController on ObservableListControllerBase, Store {
   }
 
   @override
+  void addProduct() {
+    final _$actionInfo = _$ObservableListControllerBaseActionController
+        .startAction(name: 'ObservableListControllerBase.addProduct');
+    try {
+      return super.addProduct();
+    } finally {
+      _$ObservableListControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void removerProduct() {
+    final _$actionInfo = _$ObservableListControllerBaseActionController
+        .startAction(name: 'ObservableListControllerBase.removerProduct');
+    try {
+      return super.removerProduct();
+    } finally {
+      _$ObservableListControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 products: ${products}

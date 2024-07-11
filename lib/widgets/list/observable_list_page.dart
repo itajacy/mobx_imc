@@ -39,11 +39,15 @@ class _ObservableListPageState extends State<ObservableListPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.addProduct();
+                },
                 child: const Text('Adicionar'),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.removerProduct();
+                },
                 child: const Text('Remover'),
               ),
               TextButton(
