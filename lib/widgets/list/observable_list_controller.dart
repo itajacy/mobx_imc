@@ -7,7 +7,8 @@ class ObservableListController = ObservableListControllerBase
 
 abstract class ObservableListControllerBase with Store {
   @observable
-  var products = <ProductModel>[];
+  // var products = <ProductModel>[];
+  ObservableList products = ObservableList();
 
   @action
   void loadProducts() {
@@ -26,7 +27,8 @@ abstract class ObservableListControllerBase with Store {
       ProductModel(name: 'Teclado'),
       ProductModel(name: 'Mouse'),
     ];
-
-    products = productsData;
+    //! sobrescrevendo o products pelo productsData para assim conseguir atualizar
+    // products = productsData;
+    products.addAll(productsData);
   }
 }
