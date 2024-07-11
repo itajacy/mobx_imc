@@ -12,6 +12,8 @@ abstract class ObservableListControllerBase with Store {
   // ObservableList products = ObservableList();
   //* segundo exemplo de uso do observableList
   var products = <ProductModel>[].asObservable();
+  //* terceira forma sem
+  // var products = <ProductModel>[];
 
   @action
   void loadProducts() {
@@ -32,12 +34,20 @@ abstract class ObservableListControllerBase with Store {
     ];
     //! sobrescrevendo o products pelo productsData para assim conseguir atualizar
     // products = productsData;
+    //* segunda forma
     products.addAll(productsData);
+    //* terceira forma sem
+    // products = productsData;
   }
 
   @action
   void addProduct() {
+    //*segunda forma
     products.add(ProductModel(name: 'Computador'));
+    //*terceira forma sem
+    // var productsNew = [...products];
+    // productsNew.add(ProductModel(name: 'Computador'));
+    // products = productsNew;
   }
 
   @action
