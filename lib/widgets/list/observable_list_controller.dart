@@ -8,7 +8,10 @@ class ObservableListController = ObservableListControllerBase
 abstract class ObservableListControllerBase with Store {
   @observable
   // var products = <ProductModel>[];
-  ObservableList products = ObservableList();
+  //* primeiro exemplo de uso do observableList
+  // ObservableList products = ObservableList();
+  //* segundo exemplo de uso do observableList
+  var products = <ProductModel>[].asObservable();
 
   @action
   void loadProducts() {

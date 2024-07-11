@@ -13,13 +13,13 @@ mixin _$ObservableListController on ObservableListControllerBase, Store {
       Atom(name: 'ObservableListControllerBase.products', context: context);
 
   @override
-  ObservableList<dynamic> get products {
+  ObservableList<ProductModel> get products {
     _$productsAtom.reportRead();
     return super.products;
   }
 
   @override
-  set products(ObservableList<dynamic> value) {
+  set products(ObservableList<ProductModel> value) {
     _$productsAtom.reportWrite(value, super.products, () {
       super.products = value;
     });
