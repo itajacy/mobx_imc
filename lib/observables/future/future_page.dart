@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobx_imc/observables/future/future_controller.dart';
 
 class FuturePage extends StatefulWidget {
   const FuturePage({super.key});
@@ -8,9 +10,12 @@ class FuturePage extends StatefulWidget {
 }
 
 class _FuturePageState extends State<FuturePage> {
-  Future<String> buscarNome() async {
-    await Future.delayed(Duration(seconds: 2));
-    return 'Rodrigo Rahman';
+  final controller = FutureController();
+
+  @override
+  void initState() {
+    super.initState();
+    controller.buscarNome();
   }
 
   @override
@@ -20,32 +25,36 @@ class _FuturePageState extends State<FuturePage> {
         title: const Text('Future'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          controller.buscarNome();
+        },
         child: const Icon(Icons.add),
       ),
-      body: FutureBuilder<String>(
-        future: buscarNome(),
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.none:
-              return const SizedBox.shrink();
-            case ConnectionState.waiting:
-            case ConnectionState.active:
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            case ConnectionState.done:
-              if (snapshot.hasData) {
-                return Center(
-                  child: Text(snapshot.data!),
+      body: Observer(builder: (_) {
+        return FutureBuilder<String>(
+          future: controller.nomeFuture,
+          builder: (context, snapshot) {
+            switch (snapshot.connectionState) {
+              case ConnectionState.none:
+                return const SizedBox.shrink();
+              case ConnectionState.waiting:
+              case ConnectionState.active:
+                return const Center(
+                  child: CircularProgressIndicator(),
                 );
-              }
-              return const Center(
-                child: Text('Nome não encontrado!'),
-              );
-          }
-        },
-      ),
+              case ConnectionState.done:
+                if (snapshot.hasData) {
+                  return Center(
+                    child: Text(snapshot.data!),
+                  );
+                }
+                return const Center(
+                  child: Text('Nome não encontrado!'),
+                );
+            }
+          },
+        );
+      }),
     );
   }
 }
