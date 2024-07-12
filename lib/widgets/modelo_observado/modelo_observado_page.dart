@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_imc/widgets/modelo_observado/modelo_observado_controller.dart';
@@ -22,12 +24,14 @@ class _ModeloObservadoPageState extends State<ModeloObservadoPage> {
         children: [
           Expanded(
             child: Observer(builder: (_) {
+              print('LISTAAAAA');
               return ListView.builder(
                 itemCount: controller.products.length,
                 itemBuilder: (context, index) {
                   final productStore = controller.products[index];
                   return Observer(
                     builder: (_) {
+                      print('Item Internoooooo ${productStore.product.name}');
                       return CheckboxListTile(
                         value: productStore.selected,
                         onChanged: (_) {
