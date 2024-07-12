@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_imc/widgets/list/observable_list_controller.dart';
+import 'package:mobx_imc/observables/list/observable_list_controller.dart';
 
 class ObservableListPage extends StatefulWidget {
   const ObservableListPage({super.key});

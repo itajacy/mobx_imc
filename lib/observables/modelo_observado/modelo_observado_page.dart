@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_imc/widgets/modelo_observado/modelo_observado_controller.dart';
+import 'package:mobx_imc/observables/modelo_observado/modelo_observado_controller.dart';
 
 class ModeloObservadoPage extends StatefulWidget {
   const ModeloObservadoPage({super.key});
