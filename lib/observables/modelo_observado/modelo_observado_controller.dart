@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-import 'package:mobx_imc/widgets/modelo_observado/model/product_store.dart';
+import 'package:mobx_imc/observables/modelo_observado/model/product_store.dart';
 
 import '../../model/product_model.dart';
 part 'modelo_observado_controller.g.dart';
